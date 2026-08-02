@@ -42,6 +42,10 @@ void InsertNodeatTail(Node *&head, int val)
     }
     curr->next = temp;
 }
+void InsertNodeatPos(Node *&head,int val,int pos)
+{
+ Node *temp = new Node(val);
+}
 void printlinkedlist(Node *&head)
 {
     Node *curr = head;
@@ -57,5 +61,6 @@ int main()
     Node *head = new Node(10);
     InsertNodeatHead(head, 20);
     InsertNodeatTail(head, 30);
+    InsertNodeatPos(head,40,3);
     printlinkedlist(head);
 }
