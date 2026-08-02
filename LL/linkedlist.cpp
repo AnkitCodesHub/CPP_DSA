@@ -5,7 +5,7 @@ class Node
 public:
     int data;
     Node *next;
-    // this stores data
+    // this stores data hello
     Node(int data)
     {
         // data = 10
