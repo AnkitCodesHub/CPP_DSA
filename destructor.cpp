@@ -12,16 +12,13 @@ public:
     cgpaPtr = new double;
     *cgpaPtr = cgpa;
  }
- student(student &obj)
- {
-    this->name = obj.name;
-    cgpaPtr = new double;
-    *cgpaPtr = *obj.cgpaPtr;
- }
+
 //  destructor :- has the same name as the class 
-student()
+~student()
+
 {
-    
+    cout<<"Hi! i delete everything\n";
+    delete cgpaPtr;//memory leak
 }
  void getInfo(){
     cout <<"name: "<<name<<endl;
