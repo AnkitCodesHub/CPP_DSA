@@ -20,17 +20,28 @@ Teacher(){
 // Parameterised cosntructor
  Teacher(string name,string dept, string subject,double Salary)
  {
-   this-> name = name;
+    
+    this-> name = name;
     this->dept = dept;
     this->subject = subject;
     this->Salary = Salary;
 
  }
+//  copy constructor 
+Teacher(Teacher &orgobj)//pass y reference jo v origional constructor me changes hoga wo isme reflect karega 
+{
+    cout<<"I am a custom copy contructor"<<endl;
+    this->name = orgobj.name;
+    this->dept = orgobj.dept;
+    this->subject = orgobj.subject;
+    this->Salary = orgobj.Salary;
+
+}
 
 void getInfo()
 {
     cout << "name: "<<name<<endl;
-    cout << "subject : "<<name<<endl;   
+    cout << "subject : "<<subject<<endl;   
 } 
 //  methods member functions 
 void changeDept(string newDept)
@@ -64,6 +75,8 @@ int main(){
     // t1.setSalary (25000),
     // cout <<t1.dept<<endl;
     // cout <<t1.getSalary()<<endl;
-    t1.getInfo();
+    // t1.getInfo();
+    Teacher t2(t1);//default constructor invoke ho gya 
+    t2.getInfo();
     return 0;
 }
