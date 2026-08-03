@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-class Student{
+class Person{
     public:
     string name;
     int rollno;
@@ -11,7 +11,7 @@ class Student{
     // }  
 };
 // this class inherited public attributes
-class Teacher {
+class Teacher : public Person {
     // public attributes + rollno
     public: 
     string subject;
@@ -19,17 +19,17 @@ class Teacher {
     
 };
 // this class inherited student attributes
-class TA :public Student, public Teacher {
+class Student :public Person{
     //student attributes + degree
     public:
     string degree;
 };
 int main(){
-   TA s1;
+   Teacher s1;
    s1.name = "raju rastogi";
-   s1.degree = "Applied chemistry";
+//    s1.degree = "Applied chemistry";
    cout << s1.name << endl;
-   cout << s1.degree << endl;
+//    cout << s1.degree << endl;
     return 0;
 
 
