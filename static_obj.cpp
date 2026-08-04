@@ -2,23 +2,24 @@
 #include <string>
 using namespace std;
 
-class A{
+class ABC{
     public:
-    int x;
-    void incx(){
-        x= x+1;
+    ABC(){
+    cout << "constructor\n";
+    }
+    ~ABC (){
+        cout << "destructor\n";
     }
 };
 
 int main()
-{
-  A obj1;
-  A obj2;
-  obj1.x = 100;
-  obj2.x = 200;
 
-  cout << obj1.x <<endl;
-  obj1.incx();
-  cout <<obj2.x <<endl;
-  return 0;
+// jaise hi if se bahar nikelege haamara fn destruct ho jaega 
+{
+    if (true)
+    {
+     static ABC obj;   
+    }
+    cout <<"end of main func\n";
+ return 0;
 } 
